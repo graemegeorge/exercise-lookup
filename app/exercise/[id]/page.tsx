@@ -17,7 +17,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <div className="flex flex-col gap-8">
-      <h1 className="capitalize text-xl font-bold">{exercise.name}</h1>
+      <h1 className="capitalize text-xl font-bold m-0 p-0">{exercise.name}</h1>
 
       <div className="flex gap-2">
         <ExerciseTags tags={exercise.bodyParts} />
@@ -25,15 +25,15 @@ export default async function Page({ params }: Props) {
         <ExerciseTags tags={exercise.secondaryMuscles} />
       </div>
 
-      <div className="flex gap-8">
+      <div className="flex gap-8 flex-col md:flex-row">
         {exercise.gifUrl ? (
-          <div className="w-[420px] h-[420px]">
+          <div className="w-full h-auto md:w-[420px] md:h-[420px]">
             <Image
               src={exercise.gifUrl}
               alt={exercise.name}
               width={420}
               height={420}
-              className="object-cover"
+              className="object-cover rounded-lg"
               unoptimized
             />
           </div>
