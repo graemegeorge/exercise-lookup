@@ -1,25 +1,57 @@
 "use client";
 
-import { useActionState, useEffect } from "react";
-import type { SearchState, Exercise } from "../actions";
-import { searchExercises } from "../actions";
+import { startTransition, useActionState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
+import {
+  searchExercises,
+  type SearchState,
+  type Exercise,
+} from "@/app/actions";
+import Link from "next/link";
 
-const initialState: SearchState = { query: "", exercises: [] };
+const EMPTY: SearchState = { query: "", exercises: [] };
 
-export function SearchForm() {
+export function SearchForm({
+  initialState = EMPTY,
+}: {
+  initialState?: SearchState;
+}) {
+  const router = useRouter();
+
   const searchParams = useSearchParams();
+  const qInUrl = searchParams.get("q") ?? "";
 
   const [state, formAction, isPending] = useActionState(
     searchExercises,
     initialState
   );
 
+  // React to URL changes (deep link on hydrate, back/forward, manual edits)
+  useEffect(() => {
+    if (qInUrl !== state.query) {
+      const fd = new FormData();
+      fd.append("q", qInUrl);
+      startTransition(() => formAction(fd));
+    }
+  }, [qInUrl, state.query, formAction]);
+
   return (
     <div className="space-y-6">
-      <form action={formAction} className="flex gap-2">
+      <form
+        action={formAction}
+        onSubmit={(e) => {
+          // keep the URL shareable without blocking the action
+          const fd = new FormData(e.currentTarget);
+          const q = String(fd.get("q") ?? "").trim();
+          router.replace(q ? `/search?q=${encodeURIComponent(q)}` : "?", {
+            scroll: false,
+          });
+        }}
+        className="flex gap-2"
+      >
         <input
+          key={state.query} // remount so defaultValue updates when state.query changes
           name="q"
           type="text"
           placeholder="e.g. incline dumbbell press"
@@ -55,9 +87,9 @@ export function SearchForm() {
                     <Image
                       src={img}
                       alt={ex.name}
-                      width={180}
-                      height={180}
-                      className="object-cover"
+                      width={334}
+                      height={334}
+                      className="w-full object-cover"
                       unoptimized
                       loading="lazy"
                     />
@@ -68,7 +100,9 @@ export function SearchForm() {
                   )}
                 </div>
                 <div className="mt-3 space-y-1">
-                  <h3 className="text-sm font-semibold">{ex.name}</h3>
+                  <h3 className="text-sm font-semibold">
+                    <Link href={`/exercise/${ex.exerciseId}`}>{ex.name}</Link>
+                  </h3>
                   <p className="text-xs text-gray-500">
                     {ex.bodyPart ? <span>Body: {ex.bodyPart}</span> : null}
                     {ex.target ? (

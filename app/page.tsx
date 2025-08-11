@@ -30,86 +30,93 @@ function MyWorkoutPlan() {
           <Section title="Weekly Layout">
             <Day title="Mon — Upper (Shoulder Focus)">
               <Bullet>
-                <A href="/?q=Overhead Press">Overhead Press</A> — 4x6-8
+                <A href="/search?q=Overhead Press">Overhead Press</A> — 4x6-8
               </Bullet>
               <Bullet>
-                <A href="/?q=Incline Dumbbell Press">Incline Dumbbell Press</A>{" "}
+                <A href="/search?q=Incline Dumbbell Press">
+                  Incline Dumbbell Press
+                </A>{" "}
                 — 3x8-10
               </Bullet>
               <Bullet>
-                <A href="/?q=Pull ups">Pull‑ups or Lat Pulldown</A> — 3x8-10
+                <A href="/search?q=Pull ups">Pull‑ups or Lat Pulldown</A> —
+                3x8-10
               </Bullet>
               <Bullet>
-                <A href="/?q=Lateral Raises">Lateral Raises</A> — 3x12-15
+                <A href="/search?q=Lateral Raises">Lateral Raises</A> — 3x12-15
               </Bullet>
               <Bullet>
-                <A href="/?q=Face Pulls">Face Pulls</A> — 3x12-15
+                <A href="/search?q=Face Pulls">Face Pulls</A> — 3x12-15
               </Bullet>
               <Bullet>
-                <A href="/?q=Neck Harness">Neck Harness Extensions</A> — 3x15-20
+                <A href="/search?q=Neck Harness">Neck Harness Extensions</A> —
+                3x15-20
               </Bullet>
               <Bullet>
-                <A href="/?q=Hanging Leg raises">Hanging Leg Raises</A> —
+                <A href="/search?q=Hanging Leg raises">Hanging Leg Raises</A> —
                 3x12-15
               </Bullet>
             </Day>
 
             <Day title="Tue — Lower & Core">
               <Bullet>
-                <A href="/?q=Goblet Squats">Goblet Squats</A> — 4x8-10
+                <A href="/search?q=Goblet Squats">Goblet Squats</A> — 4x8-10
               </Bullet>
               <Bullet>
-                <A href="/?q=Romanian Deadlift">Romanian Deadlift</A> — 3x8-10
+                <A href="/search?q=Romanian Deadlift">Romanian Deadlift</A> —
+                3x8-10
               </Bullet>
               <Bullet>
-                <A href="/?q=Step-ups">Step‑ups</A> — 3x10 each leg
+                <A href="/search?q=Step-ups">Step‑ups</A> — 3x10 each leg
               </Bullet>
               <Bullet>
-                <A href="/?q=Pallof Press">Pallof Press</A> — 3x10/side
+                <A href="/search?q=Pallof Press">Pallof Press</A> — 3x10/side
               </Bullet>
               <Bullet>
-                <A href="/?q=Ab Wheel Rollouts">Ab Wheel Rollouts</A> — 3x12-15
+                <A href="/search?q=Ab Wheel Rollouts">Ab Wheel Rollouts</A> —
+                3x12-15
               </Bullet>
             </Day>
 
             <Day title="Thu — Upper (Back & Width Focus)">
               <Bullet>
-                <A href="/?q=Barbell Row">Barbell Row</A> — 4x6-8
+                <A href="/search?q=Barbell Row">Barbell Row</A> — 4x6-8
               </Bullet>
               <Bullet>
-                <A href="/?q=Flat Dumbbell Press">Flat Dumbbell Press</A> —
-                3x8-10
+                <A href="/search?q=Flat Dumbbell Press">Flat Dumbbell Press</A>{" "}
+                — 3x8-10
               </Bullet>
               <Bullet>
-                <A href="/?q=Arnold Press">Arnold Press</A> — 3x8-10
+                <A href="/search?q=Arnold Press">Arnold Press</A> — 3x8-10
               </Bullet>
               <Bullet>
-                <A href="/?q=Lateral Raises">Lateral Raises</A> — 3x12-15
+                <A href="/search?q=Lateral Raises">Lateral Raises</A> — 3x12-15
               </Bullet>
               <Bullet>
-                <A href="/?q=Neck Curls">Neck Curls</A> — 3x15-20
+                <A href="/search?q=Neck Curls">Neck Curls</A> — 3x15-20
               </Bullet>
               <Bullet>
-                <A href="/?q=Plank">Plank</A> — 3x60 sec
+                <A href="/search?q=Plank">Plank</A> — 3x60 sec
               </Bullet>
             </Day>
 
             <Day title="Sat — Lower & Shoulders">
               <Bullet>
-                <A href="/?q=Split Squats">Split Squats</A> — 4x8 each leg
+                <A href="/search?q=Split Squats">Split Squats</A> — 4x8 each leg
               </Bullet>
               <Bullet>
-                <A href="/?q=Romanian Deadlift">Romanian Deadlift</A> — 3x8-10
+                <A href="/search?q=Romanian Deadlift">Romanian Deadlift</A> —
+                3x8-10
               </Bullet>
               <Bullet>
-                <A href="/?q=Overhead Press">Overhead Press</A> — 3x6-8
+                <A href="/search?q=Overhead Press">Overhead Press</A> — 3x6-8
               </Bullet>
               <Bullet>
-                <A href="/?q=Lateral Raises">Lateral Raises (drop set)</A> —
-                3x12-15 + 8-10 light reps
+                <A href="/search?q=Lateral Raises">Lateral Raises (drop set)</A>{" "}
+                — 3x12-15 + 8-10 light reps
               </Bullet>
               <Bullet>
-                <A href="/?q=Hanging Leg">Hanging Leg Raises</A> — 3x12-15
+                <A href="/search?q=Hanging Leg">Hanging Leg Raises</A> — 3x12-15
               </Bullet>
             </Day>
           </Section>
