@@ -1,13 +1,16 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import type { SearchState, Exercise } from "../actions";
 import { searchExercises } from "../actions";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 
 const initialState: SearchState = { query: "", exercises: [] };
 
 export function SearchForm() {
+  const searchParams = useSearchParams();
+
   const [state, formAction, isPending] = useActionState(
     searchExercises,
     initialState

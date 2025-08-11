@@ -32,8 +32,6 @@ export async function searchExercises(
 
   const url = `${BASE}/api/v1/exercises/search?q=${encodeURIComponent(q)}`;
 
-  console.log(url);
-
   const headers: HeadersInit = {};
   if (RAPID_KEY) {
     headers["X-RapidAPI-Key"] = RAPID_KEY;
