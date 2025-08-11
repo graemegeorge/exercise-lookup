@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Exercise Lookup",
@@ -26,7 +27,7 @@ export default function RootLayout({
               Type an exercise name, get a GIF and key details.
             </p>
           </header>
-          {children}
+          <Suspense fallback={null}>{children}</Suspense>
           <footer className="mt-10 text-xs text-gray-500">
             Built with Next.js 15, Server Actions, and Tailwind.
           </footer>
