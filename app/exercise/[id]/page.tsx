@@ -4,13 +4,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 interface Props {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export default async function Page({ params }: Props) {
-  const exercise = await getExercise(params.id);
-
-  console.log(exercise);
+  const { id } = await params;
+  const exercise = await getExercise(id);
 
   if (!exercise?.id) {
     return notFound();
