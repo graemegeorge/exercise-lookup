@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
 import { Suspense } from "react";
+import { ScanHeartIcon } from "lucide-react";
+import { SearchForm } from "./components/SearchForm";
 
 export const metadata: Metadata = {
   title: "Exercise Lookup",
@@ -18,19 +20,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-dvh">
-        <div className="mx-auto max-w-3xl px-4 py-8 pb-16">
-          <header className="mb-6">
-            <h1 className="text-2xl font-semibold tracking-tight">
-              <Link href="/">Exercise Lookup</Link>
-            </h1>
-            <p className="text-sm text-gray-500">
-              Type an exercise name, get a GIF and key details.
-            </p>
+        <div className="sticky top-0 z-10 bg-black/50 backdrop-blur-sm">
+          <header className="mx-auto max-w-screen-md p-4 flex justify-between items-center">
+            <Link href="/" className="flex items-center gap-0 justify-center">
+              <ScanHeartIcon size={42} />
+              <h1 className="text-3xl font-semibold p-0 m-0">xersize</h1>
+            </Link>
+
+            <nav className="">
+              <ul className="flex gap-4 mx-auto p-4">
+                <li>
+                  <Link href="/plan-a">Plan A</Link>
+                </li>
+                <li>
+                  <Link href="/plan-b">Plan B</Link>
+                </li>
+              </ul>
+            </nav>
           </header>
+        </div>
+
+        <div className="mx-auto max-w-screen-md px-4 py-8 pb-16">
           <Suspense fallback={null}>{children}</Suspense>
-          <footer className="mt-10 text-xs text-gray-500">
-            Built with Next.js 15, Server Actions, and Tailwind.
-          </footer>
         </div>
 
         <div className="text-sm text-center p-4 bg-[#0b0b0b] bg-opacity-75 fixed bottom-0 right-0 left-0">

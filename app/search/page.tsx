@@ -10,8 +10,10 @@ export default async function Page(props: Props) {
   const q = searchParams?.q ?? "";
   const initialState: SearchState = await runSearch(q);
   return (
-    <Suspense fallback={null}>
-      <SearchForm initialState={initialState} />
-    </Suspense>
+    <main>
+      <Suspense fallback={null}>
+        <SearchForm initialState={initialState} />
+      </Suspense>
+    </main>
   );
 }
