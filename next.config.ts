@@ -3,7 +3,13 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-    remotePatterns: [new URL("https://static.exercisedb.dev/**")],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "static.exercisedb.dev",
+        pathname: "/**",
+      },
+    ],
   },
 };
 
